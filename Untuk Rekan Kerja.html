@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teruntuk Rekan Kerja Ku</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            color: white;
+            background-color: #007fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            max-width: 200px;
+            flex: 1 1 45%;
+        }
+
+        #button1:hover { background-color: #800000; }
+        #button2:hover { background-color: #40e0d0; }
+
+        .card {
+            display: none;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            line-height: 1.6;
+        }
+
+        .card p {
+            font-size: 16px;
+            margin: 0;
+            padding: 10px;
+        }
+
+        #card1 { border: 2px solid #800000; }
+        #card1 p { color: #800000; }
+
+        #card2 { border: 2px solid #40e0d0; }
+        #card2 p { color: #40e0d0; }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 80px;
+            height: 80px;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+        }
+
+        #card1::before {
+            background-image: url('https://i.ibb.co.com/v6LGPbB4/d8988c22c6cfcbdc8708cd8ac9a8a9ba-removebg-preview.png');
+        }
+
+        #card2::before {
+            background-image: url('https://i.ibb.co.com/4RfCyKtR/b265c2efcd51a8a85e0285d2901febd5-removebg-preview.png');
+            right: 10px;
+            left: auto;
+        }
+
+        @media (min-width: 768px) {
+            .card::before {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Teruntuk Rekan Kerja Ku</h1>
+        <div class="button-container">
+            <button id="button1">Maulina Qortunazah</button>
+            <button id="button2">Yuli Indah Purwati</button>
+        </div>
+        <div id="card1" class="card">
+            <b>Untuk Nazah,</b>
+            <p>Rasanya masih sulit percaya kalau akhirnya harus melepas salah satu pilar awal di sini. Dari pertama gabung, kamu selalu jadi sosok yang tegas tapi penuh perhatian, dengan tatapan tajam yang bisa bikin ciut, tapi di balik itu selalu ada niat baik dan ketulusan.
+            <br><br>
+            Terima kasih sudah jadi <b>HR</b> yang bukan cuma urus karyawan, tapi juga selalu ada buat kami—entah itu ngasih nasihat serius atau sekadar marah marah gajelas. Kantor pasti bakal terasa beda tanpa kehadiranmu.
+            <br><br>
+            Semoga langkah barumu penuh dengan hal-hal baik, tantangan seru, dan orang-orang menyenangkan seperti dirimu.
+            <br><br>
+            Sukses selalu!✨🚀</p>
+        </div>
+        <div id="card2" class="card">
+            <b>Dear Indah,</b>
+            <p>Nggak nyangka banget akhirnya momen ini datang juga. Rasanya baru kemarin kita bareng-bareng ngelewatin suka duka di kantor ini, dari obrolan receh sampai momen serius yang bikin kita makin kompak. Kamu bukan cuma rekan kerja, tapi juga keluarga yang selalu bawain vibes positif, bikin suasana rame, dan pastinya jadi MC andalan yang selalu heboh!
+            <br><br>
+            Jujur, kehilangan sosok seperti kamu itu berat. Tapi kita semua tahu, ini bukan akhir, melainkan awal baru buat kamu. Tetap jadi diri kamu yang tulus, seru, dan penuh semangat di mana pun nanti! Jangan lupa, Kita semua terbuka buat kamu kapan aja ketika kangen mau main atau sekadar nostalgia.
+            <br><br>
+            Sukses terus buat langkah berikutnya, dan semoga jalanmu selalu dipenuhi kebahagiaan. Keep in touch yaa!</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('button1').addEventListener('click', function() {
+            toggleCard('card1', 'card2');
+        });
+
+        document.getElementById('button2').addEventListener('click', function() {
+            toggleCard('card2', 'card1');
+        });
+
+        function toggleCard(showCardId, hideCardId) {
+            document.getElementById(showCardId).style.display = 'block';
+            document.getElementById(hideCardId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+<!-- <a href="https://ibb.co.com/4RfCyKtR"><img src="https://i.ibb.co.com/4RfCyKtR/b265c2efcd51a8a85e0285d2901febd5-removebg-preview.png" alt="b265c2efcd51a8a85e0285d2901febd5-removebg-preview" border="0"></a> <a href="https://ibb.co.com/v6LGPbB4"><img src="https://i.ibb.co.com/v6LGPbB4/d8988c22c6cfcbdc8708cd8ac9a8a9ba-removebg-preview.png" alt="d8988c22c6cfcbdc8708cd8ac9a8a9ba-removebg-preview" border="0"></a> -->
