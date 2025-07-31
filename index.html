@@ -1,162 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teruntuk Rekan Kerja Ku</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            flex-direction: column;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teruntuk Rekan Kerja Ku</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
 
-        .container {
-            text-align: center;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 700px;
-            margin: 20px auto;
-        }
+    .container {
+      text-align: center;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 700px;
+      margin: 20px auto;
+    }
 
-        h1 {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+    h1 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
 
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
 
-        button {
-            padding: 12px 24px;
-            font-size: 16px;
-            color: white;
-            background-color: #007fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-            max-width: 200px;
-            flex: 1 1 45%;
-        }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      color: white;
+      background-color: #007fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      max-width: 200px;
+      flex: 1 1 45%;
+    }
 
-        #button1:hover { background-color: #E8B4BC  ; }
-        #button2:hover { background-color: #40e0d0; }
+    #button1:hover { background-color: #E8B4BC; }
+    #button2:hover { background-color: #40e0d0; }
 
-        .card {
-            display: none;
-            width: 100%;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 20px auto;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            line-height: 1.6;
-        }
+    .card {
+      display: none;
+      width: 100%;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px auto;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      line-height: 1.8;
+    }
 
-        .card p {
-            font-size: 16px;
-            margin: 0;
-            padding: 10px;
-        }
+    .card p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
 
-        #card1 { border: 2px solid #E8B4BC  ; }
-        #card1 p { color: #E8B4BC  ; }
+    #card1 { border: 2px solid #E8B4BC; }
+    #card1 p, #card1 b { color: #E8B4BC; }
 
-        #card2 { border: 2px solid #40e0d0; }
-        #card2 p { color: #40e0d0; }
+    #card2 { border: 2px solid #40e0d0; }
+    #card2 p, #card2 b { color: #40e0d0; }
 
-        .card::before {
-            content: "";
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            width: 150px;  /* Increased from 80px to 150px */
-            height: 150px; /* Increased from 80px to 150px */
-            background-size: cover;
-            background-position: center;
-            opacity: 0.5;
-        }
+    .card::before {
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      width: 150px;
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5;
+    }
 
-        #card1::before {
-            background-image: url('https://i.imgur.com/2vFQ3qy.png');
-        }
-        
-        #card2::before {
-            background-image: url('https://i.ibb.co.com/4RfCyKtR/b265c2efcd51a8a85e0285d2901febd5-removebg-preview.png');
-            right: 10px;
-            left: auto;
-        }
+    #card1::before {
+      background-image: url('https://i.imgur.com/2vFQ3qy.png');
+    }
 
-        @media (min-width: 768px) {
-            .card::before {
-                width: 180px;  /* Increased from 120px to 180px */
-                height: 180px; /* Increased from 120px to 180px */
-            }
-        }
-    </style>
+    #card2::before {
+      background-image: url('https://i.ibb.co.com/4RfCyKtR/b265c2efcd51a8a85e0285d2901febd5-removebg-preview.png');
+      right: 10px;
+      left: auto;
+    }
+
+    @media (min-width: 768px) {
+      .card::before {
+        width: 180px;
+        height: 180px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Teruntuk Rekan Kerja Ku</h1>
-        <div class="button-container">
-            <button id="button1">Asma Khoirunnisa</button>
-        </div>
-        <div id="card1" class="card">
-          <b>Untuk Mba Asma,</b> 
-<p>
-              Kalau berbicara tentang Mba Asma, <br>
-yang aku ingat adalah sosok wanita yang pintar, baik,
-tapi juga receh dan menyenangkan.<br>
-<br>
-Aku tidak terlalu kaget mendengar kabar resign Mba Asma.<br>
-Dari beberapa diskusi kita, aku tahu Mba Asma adalah orang yang haus akan eksplorasi—<br>
-seperti burung yang terbang bebas di langit,
-terus mencari tantangan baru.
-<br>
-Kita pernah berdiskusi tentang pandangan Mba Asma soal Educativa,<br>
-juga tujuan karier Mba Asma.<br>
-Aku sangat respect dengan cara pikir dan prinsip yang Mba Asma pegang.<br>
-<br>
-Semoga langkah selanjutnya<br>
-bisa membawa Mba Asma terbang lebih tinggi lagi,<br>
-dan meraih segala hal yang diimpikan!<br>
-</p>
-        </div>
-
+  <div class="container">
+    <h1>Teruntuk Rekan Kerja Ku</h1>
+    <div class="button-container">
+      <button id="button1">Salma Azizatusholihah</button>
     </div>
-    <script>
-        document.getElementById('button1').addEventListener('click', function() {
-            toggleCard('card1', 'card2');
-        });
+    <div id="card1" class="card">
+      <b>Untuk Mba Salma,</b>
+      <p>Mbak Salma adalah pribadi yang tenang dan kalem. Sejauh yang saya ketahui, beliau cenderung pemalu, sehingga saya cukup terkejut mengetahui pengalamannya sebagai komandan upacara dan kegemarannya menari.</p>
+      <p>Saya juga memperhatikan bahwa Mbak Salma sering tertawa lepas mendengar candaan dari Mas Ardian maupun tim BizDev lainnya. Meski belum banyak berinteraksi langsung karena beliau memang sangat pendiam dan sulit ditebak, menurut Mas Ardian, Mbak Salma menyukai anime <i>Attack on Titan</i> dan game <i>Mobile Legends</i>.</p>
+      <p>Walau komunikasi kami terbatas, kehadiran Mbak Salma telah memberi warna berharga bagi tim EduTeam. Semoga di tempat kerja baru nanti, seluruh pengalaman yang didapat di sini dapat menjadi bekal untuk terus berkembang sebagai wanita karier yang sukses.</p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('button1').addEventListener('click', function() {
+      toggleCard('card1', 'card2');
+    });
 
-        // document.getElementById('button2').addEventListener('click', function() {
-        //     toggleCard('card2', 'card1');
-        // });
-
-        function toggleCard(showCardId, hideCardId) {
-            document.getElementById(showCardId).style.display = 'block';
-            document.getElementById(hideCardId).style.display = 'none';
-        }
-    </script>
+    function toggleCard(showCardId, hideCardId) {
+      document.getElementById(showCardId).style.display = 'block';
+      if (document.getElementById(hideCardId))
+        document.getElementById(hideCardId).style.display = 'none';
+    }
+  </script>
 </body>
 </html>
